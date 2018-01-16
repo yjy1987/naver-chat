@@ -15,7 +15,19 @@
  	<mvc:default-servlet-handler/>
 	<mvc:annotation-driven />
 	
-    <context:component-scan base-package="com.spring.mvc"></context:component-scan>
+    <context:component-scan base-package="com.spring"/>
+    <util:properties id="props" location="classpath:config/properties/properties-${service.mode}.xml"/>
+    <context:annotation-config/>
+     
+    <bean id="envResource" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="locations">
+    		<list>
+    			<!-- <value>classpath:config/properties/config-#{systemProperties['service.mode']}.properties</value> -->
+    			<value>classpath:config/properties/properties-${service.mode}.xml</value>
+    		</list>
+    	</property>
+    </bean>
+     
      
     <!-- Interceptors -->
 	<mvc:interceptors>		
@@ -44,16 +56,6 @@
 	</bean>
 	
 	
-	<!-- google Class Bean설정 추가 -->
-	<!-- 클라이언트ID와 보안비밀 세팅-->
-	<bean id="googleConnectionFactory" class="org.springframework.social.google.connect.GoogleConnectionFactory">
-		<constructor-arg value="620932012947-8s9nqr1cq609kig8qfvusadrgrchoosi.apps.googleusercontent.com" />
-		<constructor-arg value="4hocPOf2czDv_z29g6b3GISI" />
-	</bean>
-	
-	<bean id="googleOAuth2Parameters" class="org.springframework.social.oauth2.OAuth2Parameters">
-		<property name="scope" value="https://www.googleapis.com/auth/plus.login" />
-	</bean>
 	
 	<!-- Tiles 3 -->
 	<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -69,6 +71,8 @@
         </property>
     </bean>
     
+    
+    <bean id="naverLoginBO" class="com.spring.naver.NaverLoginBo" />
     
 	
 </beans>

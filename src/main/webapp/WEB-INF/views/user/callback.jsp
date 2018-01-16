@@ -12,9 +12,9 @@
 			<div class="row" id="page-header">
 			    <div class="ui basic segment">
 			      <h1 class="ui sub header">
-			          ${map.myDisplayName } 
+			      안녕하세요?
 			      </h1>
-			      <span> ${map.myDisplayName }님, 너무 너무 반갑습니다.</span>
+			      <span> ${result }</span>
 			    </div>
 			  </div>
 			  <div class="row" id="article">

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<entry key="naver.client.id">YKxpaoCU5yrD8fwRrOal</entry>
+	<entry key="naver.client.secret">bSzCzQ5Mex</entry>
+	<entry key="naver.profile.api.url">https://openapi.naver.com/v1/nid/me</entry>
+	<entry key="naver.session.state">oauth_state</entry>
+	
+	<!-- 서버마다 달라짐 -->
+	<entry key="naver.redirect.uri">http://127.0.0.1:8282/mvc/user/callback</entry>
+</properties>
